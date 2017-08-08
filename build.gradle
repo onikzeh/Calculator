@@ -1,0 +1,33 @@
+group 'au.com.nab'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+mainClassName = "au.com.nab.Main"
+
+classes {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+
+sourceSets {
+    main {
+        java.srcDir file('src/main/java')
+        resources.srcDir file('src/main/resources')
+    }
+
+    test {
+        java.srcDir file('src/test/java')
+        resources.srcDir file('src/test/resources')
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile "junit:junit:${dependencyJUnit}"
+}
